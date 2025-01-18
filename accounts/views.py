@@ -13,8 +13,8 @@ User = get_user_model()
 class RegisterAPIView(generics.CreateAPIView):
     serializer_class = UserRegisterSerializer
 
-    def create(self, request, *args, **kwargs):
-        response = super().create(request, *args, **kwargs)
+    def create(self, request):
+        response = super().create(request)
         return Response({
             "message": "Registration successful. You can now log in."
         }, status=status.HTTP_201_CREATED)
