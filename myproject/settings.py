@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'accounts',
+    'payments',
     'corsheaders',
     'drf_yasg',
 ]
@@ -130,6 +131,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        "rest_framework.authentication.SessionAuthentication",  
+
     ],
 }
 CORS_ALLOWED_ORIGINS = [
@@ -137,3 +140,12 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+STRIPE_SECRET_KEY = 'sk_test_51QZEaRCswZXaKM4ATWiAslESextmWWHMmqiGIb2W8DJcV73xHUxf2bZ3FuITjDJSKO7vlzvBX4lIYc9A6MzpUTg400mnzg2jVa'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51QZEaRCswZXaKM4ARthLO0sY7xHwqdxAV8tHRpXouzGhr8sFSwbM9ZfQUzKWljMSwdwXT3iltkoU1si2Ys114kp000bIO5hmxu'
+DOMAIN = "http://127.0.0.1:8000"
+
+
+
+
